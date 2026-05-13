@@ -1,15 +1,5 @@
-import express from "express";
+import { UserRepository } from "./repositories/UserRepository";
 
-const app = express();
+const userRepository = new UserRepository();
 
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.send("API çalışıyor");
-});
-
-const PORT = 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server ${PORT} portunda çalışıyor`);
-});
+console.log(userRepository.getAllUsers());
