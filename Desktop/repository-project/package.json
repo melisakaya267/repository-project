@@ -4,22 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "start": "ts-node src/app.ts",
-  "migration:generate": "typeorm-ts-node-commonjs migration:generate src/database/migrations/InitialMigration -d src/database/data-source.ts",
-  "migration:run": "typeorm-ts-node-commonjs migration:run -d src/database/data-source.ts",
-  "migration:revert": "typeorm-ts-node-commonjs migration:revert -d src/database/data-source.ts"
+    "start": "ts-node src/app.ts",
+    "migration:generate": "typeorm-ts-node-commonjs migration:generate src/database/migrations/InitialMigration -d src/database/data-source.ts",
+    "migration:run": "typeorm-ts-node-commonjs migration:run -d src/database/data-source.ts",
+    "migration:revert": "typeorm-ts-node-commonjs migration:revert -d src/database/data-source.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
     "@types/node": "^25.7.0",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.9",
     "ts-node": "^10.9.2",
     "typeorm-ts-node-commonjs": "^0.3.20",
     "typescript": "^6.0.3"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
     "typeorm": "^0.3.29"
