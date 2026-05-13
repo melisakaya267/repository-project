@@ -41,6 +41,8 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
+    "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
     "skipLibCheck": true,
   }
 }

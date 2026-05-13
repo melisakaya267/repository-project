@@ -1,9 +1,15 @@
-import { AppDataSource } from "./database/data-source";
+import express from "express";
 
-AppDataSource.initialize()
-  .then(() => {
-    console.log("Veritabanı bağlantısı başarılı.");
-  })
-  .catch((error) => {
-    console.log("Hata:", error);
-  });
+const app = express();
+
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("API çalışıyor");
+});
+
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server ${PORT} portunda çalışıyor`);
+});
