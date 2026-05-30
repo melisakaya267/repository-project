@@ -18,3 +18,33 @@ function addAssistantButton() {
 }
 
 addAssistantButton();
+
+
+
+
+
+function injectReplyToEmail() {
+    const emailBody = document.querySelector('[contenteditable="true"]');
+
+    if (!emailBody) {
+        alert("E-posta gövdesi bulunamadı!");
+        return;
+    }
+
+    emailBody.innerText =
+`Merhaba,
+
+Yapay zeka tarafından oluşturulan yanıt taslağı e-posta alanına aktarıldı.
+
+İyi çalışmalar.`;
+}
+
+const injectButton = document.createElement("button");
+injectButton.innerText = "Yanıtı E-postaya Aktar";
+injectButton.style.position = "fixed";
+injectButton.style.bottom = "70px";
+injectButton.style.right = "20px";
+
+injectButton.addEventListener("click", injectReplyToEmail);
+
+document.body.appendChild(injectButton);
