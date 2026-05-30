@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Akilli Eposta Asistani",
+  "version": "1.0",
+  "description": "Yapay zeka destekli eposta yardimcisi",
+
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"]
+    }
+  ]
+}
