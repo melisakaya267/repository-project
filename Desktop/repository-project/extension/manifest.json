@@ -1,16 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "Akilli Eposta Asistani",
-  "version": "1.0",
-  "description": "Yapay zeka destekli eposta yardimcisi",
+  "name": "Akilli Eposta Mesaj Yanit Asistani",
+  "version": "1.0.0",
+  "description": "Gmail ve Outlook icin yapay zeka destekli e-posta yanit asistanı.",
 
   "action": {
+    "default_title": "Eposta Asistani",
     "default_popup": "popup/popup.html"
   },
 
+  "permissions": ["activeTab", "scripting"],
+
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office.com/*"
+      ],
       "js": ["content/content.js"]
     }
   ]
